@@ -1,0 +1,67 @@
+.about {
+  padding: 80px 60px;
+  background: #fff;
+  color: #333;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  color: #ff9800;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.about h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #ff9800;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.highlight {
+  color: #ff5722;
+  font-weight: bold;
+}
+
+.skills {
+  margin-top: 30px;
+}
+
+.skills h3 {
+  margin-bottom: 15px;
+  color: #ff9800;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.icon {
+  font-size: 2.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.react { color: #61dafb; }
+.js { color: #f7df1e; }
+.css { color: #2965f1; }
+.github { color: #333; }

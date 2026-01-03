@@ -1,0 +1,31 @@
+#contacts {
+  padding: 40px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+#contacts h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contacts-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contacts-list li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.contacts-list a {
+  color: #0078d7;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contacts-list a:hover {
+  color: #ffcc00;
+}

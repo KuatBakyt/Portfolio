@@ -1,0 +1,53 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15.5px 60px;
+  background: #ff9800; 
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.socials a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white; 
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #ffe082;
+}
+
+@media (max-width: 480px) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .footer p {
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+  }
+
+  .socials {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .socials a {
+    margin-left: 0;
+    font-size: 0.9rem;
+  }
+}

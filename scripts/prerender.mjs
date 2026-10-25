@@ -3,7 +3,7 @@ import { createElement } from 'react'
 import { renderToString } from 'react-dom/server'
 import { readFile, writeFile, mkdir } from 'node:fs/promises'
 
-const origin = (process.env.SITE_URL || 'https://portfolio-kohl-eight-yxq5iogtn8.vercel.app').replace(/\/$/, '')
+const origin = (process.env.SITE_URL || 'https://bakyt-dev.vercel.app').replace(/\/$/, '')
 const url = new URL(origin)
 if (url.protocol !== 'https:' || url.pathname !== '/' || url.search || url.hash) throw new Error('SITE_URL must be an HTTPS origin without a path')
 const server = await createServer({ cacheDir: 'node_modules/.vite-prerender', server: { middlewareMode: true }, appType: 'custom' })

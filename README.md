@@ -24,9 +24,13 @@ npm run preview
 
 Существующий проект Vercel `portfolio` подключён к этому репозиторию. Публикация из `main`: framework Vite, build `npm run check`, output `dist`. Настройки находятся в `vercel.json`.
 
-Пока основной адрес: https://portfolio-kohl-eight-yxq5iogtn8.vercel.app
+Основной адрес: https://bakyt-dev.vercel.app
 
-Чтобы назначить короткий адрес, добавьте свободный адрес `bakyt-dev.vercel.app` (или другой согласованный) в Domains проекта Vercel. Само переименование репозитория адрес Vercel не меняет. Сначала проверьте доступность и принадлежность адреса проекту, затем укажите `SITE_URL=https://новый-адрес` для production-сборки, пересоберите сайт и настройте постоянный редирект старого домена на новый. Не меняйте canonical на адрес, который ещё не принадлежит проекту.
+Страницы услуг: https://bakyt-dev.vercel.app/razrabotka-saitov-almaty/ · https://bakyt-dev.vercel.app/telegram-boty/ · https://bakyt-dev.vercel.app/ispravlenie-oshibok/
+
+Старый публичный адрес перенаправляется на новый постоянным редиректом. SITE_URL для production задан в Vercel.
+
+При дальнейшей смене адреса сначала добавьте и подтвердите новый домен в Vercel, затем обновите SITE_URL, выполните сборку и настройте редирект. Не меняйте canonical на адрес, который ещё не принадлежит проекту.
 
 ## SEO
 
@@ -38,7 +42,7 @@ npm run preview
 - `/ispravlenie-oshibok/` — исправления;
 - `/privacy/` — конфиденциальность.
 
-У страниц услуг разные H1, title, description и canonical. Есть Open Graph, PNG для социальных ссылок, JSON-LD, sitemap.xml, robots.txt и страница 404. `SITE_URL` — необязательная переменная сборки, HTTPS-origin без пути. По умолчанию используется существующий публичный адрес из настроек старого портфолио. Индексация и позиции в поиске не гарантируются: после публикации добавьте основной домен в Google Search Console и отправьте `/sitemap.xml`.
+У страниц услуг разные H1, title, description и canonical. Есть Open Graph, PNG для социальных ссылок, JSON-LD, sitemap.xml, robots.txt и страница 404. `SITE_URL` — необязательная переменная сборки, HTTPS-origin без пути. По умолчанию используется https://bakyt-dev.vercel.app. Индексация и позиции в поиске не гарантируются: после публикации добавьте основной домен в Google Search Console и отправьте `/sitemap.xml`.
 
 ## Контакты и форма
 

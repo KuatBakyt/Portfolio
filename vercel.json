@@ -6,10 +6,35 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "headers": [
-    { "source": "/(.*)", "headers": [
-      { "key": "X-Content-Type-Options", "value": "nosniff" },
-      { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-      { "key": "X-Frame-Options", "value": "DENY" }
-    ] }
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "portfolio-kohl-eight-yxq5iogtn8.vercel.app"
+        }
+      ],
+      "destination": "https://bakyt-dev.vercel.app/:path*",
+      "permanent": true
+    }
   ]
 }

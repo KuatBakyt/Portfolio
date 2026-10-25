@@ -1,73 +1,53 @@
-# React + TypeScript + Vite
+# Bakyt Dev — сайты и Telegram-боты
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Портфолио и услуги Бакыта Куата: сайты, Telegram-боты, backend и исправления. React 19, TypeScript, Vite; светлый адаптивный дизайн по согласованному макету.
 
-Currently, two official plugins are available:
+## Локальный запуск
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Нужен Node.js 22.12+ или 24 LTS.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm ci
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Проверка готового сайта:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run check
+npm run preview
 ```
+
+`check` проверяет TypeScript, собирает сайт, создаёт HTML страниц и проверяет метаданные, локальные ссылки, изображения и якоря. Для проверки итоговых SEO-настроек используйте `preview`, а не dev-сервер.
+
+## Публикация
+
+Существующий проект Vercel `portfolio` подключён к этому репозиторию. Публикация из `main`: framework Vite, build `npm run check`, output `dist`. Настройки находятся в `vercel.json`.
+
+Пока основной адрес: https://portfolio-kohl-eight-yxq5iogtn8.vercel.app
+
+Чтобы назначить короткий адрес, добавьте свободный адрес `bakyt-dev.vercel.app` (или другой согласованный) в Domains проекта Vercel. Само переименование репозитория адрес Vercel не меняет. Сначала проверьте доступность и принадлежность адреса проекту, затем укажите `SITE_URL=https://новый-адрес` для production-сборки, пересоберите сайт и настройте постоянный редирект старого домена на новый. Не меняйте canonical на адрес, который ещё не принадлежит проекту.
+
+## SEO
+
+Готовый HTML создаётся на сборке, затем React подключает интерактивность. Страницы:
+
+- `/` — портфолио и услуги;
+- `/razrabotka-saitov-almaty/` — разработка сайтов;
+- `/telegram-boty/` — Telegram-боты;
+- `/ispravlenie-oshibok/` — исправления;
+- `/privacy/` — конфиденциальность.
+
+У страниц услуг разные H1, title, description и canonical. Есть Open Graph, PNG для социальных ссылок, JSON-LD, sitemap.xml, robots.txt и страница 404. `SITE_URL` — необязательная переменная сборки, HTTPS-origin без пути. По умолчанию используется существующий публичный адрес из настроек старого портфолио. Индексация и позиции в поиске не гарантируются: после публикации добавьте основной домен в Google Search Console и отправьте `/sitemap.xml`.
+
+## Контакты и форма
+
+Публичные контакты сохранены из старого сайта в `src/content.ts`: WhatsApp, Telegram, email, телефон и GitHub. Форма проверяет обязательные поля и подготавливает сообщение в WhatsApp; посетитель сам отправляет его. Сайт не принимает заявку на сервер и не заявляет о её отправке. Токены, база данных и backend для такого сценария не нужны.
+
+## Проекты и изображения
+
+- Flowza CRM: собственный MVP; настоящий снимок интерфейса с тестовыми данными из `flowza-crm/frontend/docs/screenshots/desktop-dashboard.png`.
+- Fashion Luxe: учебное приложение, обложка из его `assets/images/hero.jpg`; не выдаётся за снимок работающего магазина. Заказы имитируются, платежи не подключены.
+- Business Bank: учебная система; настоящий снимок из `business_bank_app/frontend/test/screenshots/dashboard-desktop.png`, тестовые данные, без реальных банковских операций.
+
+Изображения оптимизированы в WebP. Декоративная иллюстрация главного экрана — собственные SVG/CSS без тяжёлых библиотек. Google Fonts загружает Manrope; при недоступности применяется Arial. Старые компоненты и неподтверждённые описания работы в компаниях удалены из текущей версии; история Git сохранена.
